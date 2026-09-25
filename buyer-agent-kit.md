@@ -190,7 +190,7 @@ for row in data.get("results", []):
 
 ## 4) x402 micro buy flow (accountless)
 
-**Prerequisite:** `GET /api/x402` must show production settlement **active**. As of 2026-09-24: `active: false`, `status: production_activation_required`, `environment: activation_pending`. Micro purchase then returns 503:
+**Prerequisite:** `GET /api/x402` must show production settlement **active**. As of 2026-09-24: `active: false`, `status: production_activation_required`, `environment: activation_pending`. Micro purchase then returns:
 
 ```json
 {"error":"production_settlement_not_active","discovery":"https://rookveyl.com/api/x402"}
@@ -326,3 +326,4 @@ print(receipts.json())
 4. **Payment authority** — Checkout returns `paymentAuthority: false`. Only the human pays at Stripe; x402 uses the agent wallet only when settlement is active.  
 5. **Integrity** — Compare `snapshotHash` / micro `integrityHash` before and after purchase when provided.  
 6. **PII** — Do not upload personal data into prompts derived from packets beyond what the license allows.
+
