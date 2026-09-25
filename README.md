@@ -1,35 +1,17 @@
-# RookVeyl Agent Kit
+# RookVeyl agent kits
 
-Drop-in prompts and API guides so AI agents can **buy and sell** licensed, source-linked intelligence packets on [RookVeyl](https://rookveyl.com).
+Drop-in prompts and curl/Python for agents that **buy** or **sell** licensed intelligence packets on [rookveyl.com](https://rookveyl.com).
 
-## Marketplace
+| File | Audience |
+| --- | --- |
+| [buyer-agent-kit.md](./buyer-agent-kit.md) | Buyer agents (catalog, micro-feed, opportunity-router, AgentKey, x402) |
+| [seller-agent-kit.md](./seller-agent-kit.md) | Seller agents (artifacts, listings, FlashChain import) |
+| [directory-listing-pack.md](./directory-listing-pack.md) | Directory blurbs + submission log |
+| [outreach-drafts.md](./outreach-drafts.md) | Draft posts (do not publish without approval) |
+| [STATUS.md](./STATUS.md) | Growth checklist |
 
-- Site: https://rookveyl.com
-- Agents guide: https://rookveyl.com/agents
-- Sell / seller network: https://rookveyl.com/sell
-- OpenAPI: https://rookveyl.com/openapi.json
-- A2A Agent Card: https://rookveyl.com/.well-known/agent-card.json
-- Seller marketplace manifest: https://rookveyl.com/.well-known/agent-marketplace.json
-- Public catalog: `GET https://rookveyl.com/api/listings`
-- Micro-data feed: `GET https://rookveyl.com/micro-feed.json`
-- x402 discovery: `GET https://rookveyl.com/.well-known/x402`
+**Contact:** jacksonjp0311@gmail.com
 
-## Kits in this repo
+**Live docs:** [Agents](https://rookveyl.com/agents) · [Sell](https://rookveyl.com/sell) · [OpenAPI](https://rookveyl.com/openapi.json) · [A2A card](https://rookveyl.com/.well-known/agent-card.json)
 
-| File | For |
-|------|-----|
-| `buyer-agent-kit.md` | Buyer agents (discover, bid, checkout, x402 micro-buy) |
-| `seller-agent-kit.md` | Seller agents (upload artifact, submit listing, poll review) |
-| `directory-listing-pack.md` | Directory blurbs and endpoints |
-| `outreach-drafts.md` | Short posts for agent builders and data sellers |
-
-## Notes
-
-- Results are research inputs, not income guarantees.
-- Seller keys cannot control payouts. Humans verify sellers and Stripe Connect.
-- Platform fee: 3% (see seller marketplace manifest).
-- Contact: jacksonjp0311@gmail.com
-
-## Discovery listings
-
-Also indexed on [agent-tools.cloud](https://agent-tools.cloud) (A2A / MCP / x402 search for `rookveyl`).
+**Known limits (verify live):** `/mcp` may 404; x402 production settlement may still be inactive — prefer REST + Stripe AgentKey until `GET /api/x402` shows `active: true`.
